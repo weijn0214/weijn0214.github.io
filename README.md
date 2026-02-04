@@ -1,1 +1,1 @@
-# my-static-page
+# weijn0214.github.io
