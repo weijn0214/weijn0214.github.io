@@ -1,0 +1,47 @@
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg-color:#f7f6f3;--text-color:#1f1f1f;--accent-color:#2f6feb;--border-color:rgba(0,0,0,.08);--card-bg:#fff}
+body{background-color:var(--bg-color);color:var(--text-color);line-height:1.7;display:flex;flex-direction:column;min-height:100vh;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Microsoft YaHei",sans-serif;font-size:16px}
+header.pixel-header{background-color:#fff;border-bottom:1px solid var(--border-color);padding:.75rem 0;margin-bottom:1.5rem}
+.header-content{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.header-left h1{font-size:clamp(24px,4vw,32px);font-weight:700;margin:0}
+.header-left p{font-size:clamp(14px,2vw,16px);color:#6b7280;margin-top:.25rem}
+.header-right{display:flex;align-items:center}
+.header-right .theme-toggle{margin-left:.75rem}
+.nav{display:flex;gap:1rem;align-items:center}
+.nav-link{color:#374151;text-decoration:none;font-weight:600}
+.nav-link{font-size:15px}
+.nav-link:hover{color:#111827}
+.container{max-width:900px;margin:0 auto;padding:0 1.5rem;flex:1;width:100%}
+.card{background-color:var(--card-bg);border:1px solid var(--border-color);border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.12);padding:2rem;margin-bottom:1.5rem;transition:box-shadow .2s ease,transform .1s ease}
+.card img {max-width: 100%; height: auto; display: block; border-radius: 12px;}
+
+.card:hover{box-shadow:0 2px 6px rgba(0,0,0,.1),0 16px 40px rgba(0,0,0,.16);transform:translateY(-2px)}
+.card h2{font-size:24px;font-weight:600;color:#111827;margin-bottom:.75rem}
+.card p{margin-bottom:1rem;font-size:16px}
+.btn{display:inline-block;background-color:var(--accent-color);color:#fff;padding:.7rem 1.1rem;border:1px solid rgba(0,0,0,.1);border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;box-shadow:0 2px 6px rgba(47,111,235,.3);cursor:pointer;transition:background-color .15s ease,transform .1s ease}
+.btn:hover{background-color:#2557d6}
+.btn:active{transform:translateY(1px)}
+.demo-img{display:block;width:100%;height:auto;border-radius:28px;margin:1rem 0;box-shadow:0 20px 50px rgba(0,0,0,.35),0 4px 12px rgba(0,0,0,.18);background-color:#ececec}
+footer{border-top:1px solid var(--border-color);text-align:center;padding:1.25rem;margin-top:auto;color:#6b7280;background:transparent}
+@media(max-width:768px){.header-content{flex-direction:column;align-items:flex-start;text-align:left}.header-right{width:100%;margin-top:.5rem}.container{padding:0 1rem}.card{padding:1.25rem}}
+
+/* Theme toggle switch */
+.theme-toggle{position:relative;width:48px;height:28px;border:1px solid var(--border-color);border-radius:99px;background:#e5e7eb;margin-right:.75rem;cursor:pointer;transition:background-color .25s ease}
+.theme-toggle .toggle-track{position:absolute;inset:0;border-radius:99px}
+.theme-toggle .toggle-thumb{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.2);transition:transform .25s cubic-bezier(0.2,0.8,0.2,1)}
+.theme-toggle.active{background:#111827}
+.theme-toggle.active .toggle-thumb{transform:translateX(20px);background:#f9fafb}
+
+/* Dark theme */
+html[data-theme="dark"]{--bg-color:#0f1115;--text-color:#e5e7eb;--accent-color:#58a6ff;--border-color:rgba(255,255,255,.08);--card-bg:#0f1115}
+html[data-theme="dark"] body{background-color:var(--bg-color);color:var(--text-color)}
+html[data-theme="dark"] header.pixel-header{background-color:#0f1115;border-bottom:1px solid var(--border-color)}
+html[data-theme="dark"] .nav-link{color:#cbd5e1}
+html[data-theme="dark"] .nav-link:hover{color:#fff}
+html[data-theme="dark"] .card{border-color:var(--border-color);box-shadow:0 1px 3px rgba(0,0,0,.6),0 16px 48px rgba(0,0,0,.6)}
+html[data-theme="dark"] .card:hover{box-shadow:0 2px 6px rgba(0,0,0,.7),0 24px 64px rgba(0,0,0,.7)}
+html[data-theme="dark"] .card h2{color:#e5e7eb}
+html[data-theme="dark"] .btn{border-color:rgba(255,255,255,.12);box-shadow:0 2px 8px rgba(88,166,255,.35)}
+html[data-theme="dark"] .btn:hover{background-color:#3a7bd5}
+html[data-theme="dark"] .demo-img{box-shadow:0 28px 70px rgba(0,0,0,.7),0 8px 18px rgba(0,0,0,.5);background-color:#111317}
+html[data-theme="dark"] footer{border-top-color:var(--border-color);color:#9ca3af;background:transparent}
