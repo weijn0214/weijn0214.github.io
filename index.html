@@ -6,14 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 页面标题，浏览器标签页显示 -->
     <title>我的静态页面 | GitHub Pages</title>
-    
+
     <!-- 引入 Inter 字体以匹配 Notion 风格 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- 引入 GitHub Buttons 脚本 -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!--    &lt;!&ndash; 引入 GitHub Buttons 脚本 &ndash;&gt;-->
+<!--    <script async defer src="https://buttons.github.io/buttons.js"></script>-->
+    <script>
+
+        fetch('https://v1.hitokoto.cn/?c=f&encode=json')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                console.log(data.creator)
+                console.log(data.hitokoto)
+                const hitokoto_creator = document.querySelector('#hitokoto_creator')
+                const hitokoto_hitokoto = document.querySelector('#hitokoto_hitokoto')
+                hitokoto_creator.innerText = data.creator
+                hitokoto_hitokoto.innerText = data.hitokoto
+
+            })
+            .catch(console.error)
+
+
+    </script>
 
     <!-- 引入外部样式表 -->
     <link rel="stylesheet" href="css/style.css">
@@ -26,21 +44,21 @@
     <div class="container">
         <!-- 第一个内容模块 -->
         <div class="card">
-            <h2>关于这个页面</h2>
-            <p>GitHub Pages 支持纯前端静态资源（HTML/CSS/JS/图片/字体等），无需后端服务，免费且稳定。</p>
+            <h2 id="hitokoto_creator">获取中...</h2>
+            <p id="hitokoto_hitokoto">获取中...</p>
             <img src="https://picsum.photos/800/400" alt="示例图片" class="demo-img">
-            <button class="btn" id="clickBtn">点击我试试</button>
-            <p id="tipText" style="margin-top: 1rem; display: none; color: #27ae60; font-weight: bold;">你点击了按钮！这是简单的 JS 交互效果~</p>
+
         </div>
 
         <!-- 第二个内容模块 -->
-        <div class="card">
-            <h2>如何修改这个页面</h2>
-            <p>1. 修改文字：直接替换 HTML 中的文字内容即可；</p>
-            <p>2. 修改样式：调整 &lt;style&gt; 标签内的 CSS 代码，比如颜色、大小、布局；</p>
-            <p>3. 添加功能：在 &lt;script&gt; 标签内编写 JS 代码，实现更多交互；</p>
-            <p>4. 替换图片：将图片上传到仓库，修改 img 标签的 src 为相对路径（如 ./images/xxx.png）。</p>
-        </div>
+<!--        <div class="card">-->
+<!--            <h2 id="hitokoto_text2"></h2>-->
+<!--            <p id="hitokoto_text3"></p>-->
+<!--            <img src="https://picsum.photos/800/400" alt="示例图片" class="demo-img">-->
+<!--            <button class="btn" id="clickBtn">点击我试试</button>-->
+<!--            <p id="tipText" style="margin-top: 1rem; display: none; color: #27ae60; font-weight: bold;">你点击了按钮！这是简单的-->
+<!--                JS 交互效果~</p>-->
+<!--        </div>-->
     </div>
 
     <!-- 底部占位符 -->
