@@ -5,33 +5,12 @@
     <!-- 适配移动端，保证在手机上正常显示 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 页面标题，浏览器标签页显示 -->
-    <title>我的静态页面 | GitHub Pages</title>
+    <title>首页 |weijn0214's Space</title>
 
     <!-- 引入 Inter 字体以匹配 Notion 风格 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-<!--    &lt;!&ndash; 引入 GitHub Buttons 脚本 &ndash;&gt;-->
-<!--    <script async defer src="https://buttons.github.io/buttons.js"></script>-->
-    <script>
-
-        fetch('https://v1.hitokoto.cn/?c=f&encode=json')
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-                console.log(data.creator)
-                console.log(data.hitokoto)
-                const hitokoto_creator = document.querySelector('#hitokoto_creator')
-                const hitokoto_hitokoto = document.querySelector('#hitokoto_hitokoto')
-                hitokoto_creator.innerText = data.creator
-                hitokoto_hitokoto.innerText = data.hitokoto
-
-            })
-            .catch(console.error)
-
-
-    </script>
 
     <!-- 引入外部样式表 -->
     <link rel="stylesheet" href="css/style.css">
@@ -42,23 +21,12 @@
 
     <!-- 页面主体内容 -->
     <div class="container">
-        <!-- 第一个内容模块 -->
-        <div class="card">
-            <h2 id="hitokoto_creator">获取中...</h2>
-            <p id="hitokoto_hitokoto">获取中...</p>
-            <img src="https://picsum.photos/800/400" alt="示例图片" class="demo-img">
-
+        <!-- 每日一言模块 -->
+        <div class="card quote-card">
+            <h2 id="hitokoto_from">...</h2>
+            <p id="hitokoto_hitokoto">Loading...</p>
+            <img src="https://picsum.photos/800/400" alt="图片">
         </div>
-
-        <!-- 第二个内容模块 -->
-<!--        <div class="card">-->
-<!--            <h2 id="hitokoto_text2"></h2>-->
-<!--            <p id="hitokoto_text3"></p>-->
-<!--            <img src="https://picsum.photos/800/400" alt="示例图片" class="demo-img">-->
-<!--            <button class="btn" id="clickBtn">点击我试试</button>-->
-<!--            <p id="tipText" style="margin-top: 1rem; display: none; color: #27ae60; font-weight: bold;">你点击了按钮！这是简单的-->
-<!--                JS 交互效果~</p>-->
-<!--        </div>-->
     </div>
 
     <!-- 底部占位符 -->
