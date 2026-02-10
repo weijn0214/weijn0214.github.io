@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(base + '/components/header.html').then(res => res.text()),
         fetch(base + '/components/footer.html').then(res => res.text())
     ]).then(([headerData, footerData]) => {
-        document.getElementById('header-placeholder').innerHTML = headerData;
-        document.getElementById('footer-placeholder').innerHTML = footerData;
+        document.getElementById('header-container').innerHTML = headerData;
+        document.getElementById('footer-container').innerHTML = footerData;
         
         window.isHeaderLoaded = true; // 标记已加载
         
@@ -120,8 +120,27 @@ function initThemeToggle() {
     }
     const btn = document.getElementById('themeToggle');
     if (!btn) return;
+
+    // Helper to update icons
+    const updateIcons = (isDark) => {
+        const sunIcon = btn.querySelector('.icon-sun');
+        const moonIcon = btn.querySelector('.icon-moon');
+        if (sunIcon && moonIcon) {
+            if (isDark) {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            } else {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            }
+        }
+    };
+
     // 初始化开关外观
-    updateToggleUI(btn, root.getAttribute('data-theme') === 'dark');
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    updateToggleUI(btn, isDark);
+    updateIcons(isDark);
+
     btn.addEventListener('click', () => {
         const isDark = root.getAttribute('data-theme') === 'dark';
         const next = isDark ? 'light' : 'dark';
@@ -129,11 +148,12 @@ function initThemeToggle() {
         root.setAttribute('data-theme', next);
         localStorage.setItem('theme', next);
         updateToggleUI(btn, next === 'dark');
+        updateIcons(next === 'dark');
     });
 }
 
 function adjustNavLinks(base) {
-    const links = document.querySelectorAll('.nav-link[data-path]');
+    const links = document.querySelectorAll('[data-path]');
     links.forEach(link => {
         const path = link.getAttribute('data-path');
         link.setAttribute('href', base + '/' + path);

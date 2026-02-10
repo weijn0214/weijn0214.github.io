@@ -1,38 +1,35 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <!-- 适配移动端，保证在手机上正常显示 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 页面标题，浏览器标签页显示 -->
-    <title>首页 |weijn0214's Space</title>
-
-    <!-- 引入 Inter 字体以匹配 Notion 风格 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- 引入外部样式表 -->
+    <title>Weijn's Space</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- 预加载 -->
+    <link rel="preload" href="components/header.html" as="fetch" crossorigin>
+    <link rel="preload" href="components/footer.html" as="fetch" crossorigin>
 </head>
 <body>
-    <!-- 头部占位符 -->
-    <div id="header-placeholder"></div>
+    <div id="header-container"></div>
 
-    <!-- 页面主体内容 -->
-    <div class="container">
-        <!-- 每日一言模块 -->
-        <div class="card quote-card">
-            <h2 id="hitokoto_from">...</h2>
-            <p id="hitokoto_hitokoto">Loading...</p>
-            <img src="https://picsum.photos/800/400" alt="图片">
-        </div>
-    </div>
+    <main id="main-content" class="container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <!-- 每日一言模块 -->
+                <h1  id="hitokoto_from">...</h1>
+                <h3  id="hitokoto_hitokoto">Loading...</h3>
+            </div>
+            <div class="hero-image">
+                <div class="container">
+                    <img src="https://picsum.photos/800/400" alt="图片">
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <!-- 底部占位符 -->
-    <div id="footer-placeholder"></div>
+    <div id="footer-container"></div>
 
-    <!-- 引入外部脚本 -->
     <script src="js/script.js"></script>
     <script src="js/loader.js"></script>
 </body>

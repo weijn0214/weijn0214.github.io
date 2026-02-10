@@ -3,34 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>关于 |weijn0214's Space</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>关于 | Weijn's Space</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="preload" href="../components/header.html" as="fetch" crossorigin>
+    <link rel="preload" href="../components/footer.html" as="fetch" crossorigin>
 </head>
 <body>
-    <!-- 头部占位符 -->
-    <div id="header-placeholder"></div>
+    <div id="header-container"></div>
 
-    <div class="container">
-        <div class="card">
-            <h2>我吗？</h2>
-            <p></p>
-            <ul class="contact-list">
-                <li><span class="label">GitHub:</span> <a href="https://github.com/weijn0214" target="_blank">@weijn0214</a></li>
-                <li><span class="label">Email:</span> <a href="mailto:weijn0214@163.com">weijn0214@163.com</a></li>
-                <li><span class="label">V我50?</span><img src="../img/wx.png" height="200" width="200"/></li>
-            </ul>
+    <main id="main-content" class="container page-content">
+        <div class="about-section">
+            <div class="about-content">
+                <h1 class="page-title">关于我</h1>
+            </div>
+            <div class="profile-text">
+                <h2>嘿，我是卫洁宁 (weijn) 👋</h2>
+                <p class="role">Java Developer & Tech Enthusiast</p>
+                <p class="bio">
+                    一个脾气暴躁的 Java 码农。
+                    热衷于探索新技术，构建高效的后端服务。
+                    目前专注于 Java 生态系统、分布式架构以及云计算相关技术。
+                </p>
+                <div class="fun-section"></div>
+
+                <div>
+                    <div class="qr-code-container">
+                        <img src="../img/wx.png" alt="WeChat Pay" class="qr-code">
+                        <p class="qr-caption">微信支付 请我喝杯咖啡</p>
+                    </div>
+                </div>
+
+            </div>
+
 
         </div>
-    </div>
+    </main>
 
-    <!-- 底部占位符 -->
-    <div id="footer-placeholder"></div>
+    <div id="footer-container"></div>
 
-    <!-- 引入外部脚本 -->
     <script src="../js/script.js"></script>
     <script src="../js/loader.js"></script>
 </body>
